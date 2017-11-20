@@ -3,10 +3,10 @@ package com.jihuiduo
 //def PROJECT_NAME = 'yt'//项目名称
 //def SERVICE_NAME = 'im'//服务名称
 //def SERVICE_FOLDER_NAME = 'service-im'//发布服务文件夹名称,不配置默认使用服务名称作为服务文件夹名称
-//def MAVEN_ENV = 'beta-jhd'//Maven打包环境
+//def MAVEN_ENV = 'beta'//Maven打包环境
 //def GIT_PATH = 'git@172.16.61.211:service/service-im.git'//git地址
-//def USER_EMAIL = '765105646@qq.com'//邮件接收人
-//def NODES = ['beta_facade_mq']//跳板机(在Jenkins中配置配置的节点名称,目标服务器从跳板机拷贝文件也用的这个名称)
+//def USER_EMAIL = 'xxxxxxx@xxx.com'//邮件接收人
+//def NODES = ['BETA']//跳板机(在Jenkins中配置配置的节点名称,目标服务器从跳板机拷贝文件也用的这个名称)
 //def TARGETS = [['infra02']]//目标服务器
 ////端口配置
 //def SHUTDOWN_PORT=8029
@@ -203,7 +203,7 @@ def GIT_BRANCH_DEF = GIT_BRANCH.trim() == "" ?'master':GIT_BRANCH
     } finally {
         stage('Mail') {
             try {
-                mail bcc: '', body: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) ${env.BUILD_URL} ${failMessage}", cc: '', from: '13991544720@139.com', replyTo: '', subject: message, to: "${_config.user.email}"
+                mail bcc: '', body: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) ${env.BUILD_URL} ${failMessage}", cc: '', from: 'xxxxxxxxx@xxxx.com', replyTo: '', subject: message, to: "${_config.user.email}"
             } catch (e) {
                 e.printStackTrace()
             }
